@@ -21,11 +21,6 @@ function startGame(){
 
 }
 
-//function nextQuestion(){
-//    resetState()
- //   showQuestion(shuffledQuestions[currentQuestionIndex])
-
-//}
 
 function setNextQuestion() {
     resetState()
@@ -36,7 +31,7 @@ function setNextQuestion() {
 function showQuestion(question){
     questionElement.innerText = question.question
   question.answers.forEach(answer => {
-    const button = document.createElement('button')
+    var button = document.createElement('button')
     button.innerText = answer.text
     button.classList.add('btn')
     if (answer.correct) {
@@ -58,8 +53,8 @@ function resetState() {
 }
 
 function selectAnswer(e){
-    const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
+    var selectedButton = e.target
+    var correct = selectedButton.dataset.correct
     setStatusClass(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
       setStatusClass(button, button.dataset.correct)
@@ -86,3 +81,38 @@ function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
   }
+
+  var questions = [
+    {
+      question: 'What is the capital of Iceland?',
+      answers: [
+        { text: 'Reykjavík', correct: true },
+        { text: 'Belgium', correct: false }
+      ]
+    },
+    {
+      question: 'What is the largest country in the world?',
+      answers: [
+        { text: 'Russia', correct: true },
+        { text: 'Africa', correct: false },
+        { text: 'India', correct: false },
+        { text: 'Australia', correct: false }
+      ]
+    },
+    {
+      question: 'How many valves does the heart have?',
+      answers: [
+        { text: 'Eight', correct: false },
+        { text: 'Four', correct: true },
+        { text: 'Two', correct: false },
+        { text: 'Five', correct: false }
+      ]
+    },
+    {
+      question: 'What is the Papaver rhoeas flower better known as?',
+      answers: [
+        { text: 'A tulip!', correct: false },
+        { text: 'A poppy!', correct: true }
+      ]
+    }
+  ]
