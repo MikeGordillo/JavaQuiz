@@ -34,9 +34,21 @@
 
   .container-fluid { 
     height: 560px;
-    position: relative;;
-   
-  }
+    position: relative;
+    }
+
+  .timer {
+      padding: 18px;
+      position: fixed;
+      top:  0;
+      right: 0;
+      text-align: center;
+      height: 20px;
+      width: 60px;
+      border-radius: 2px;
+      background-color:black;
+      color: white;
+      }
 
   .ml4 {
     color:white;
@@ -54,14 +66,6 @@
     opacity: 0; 
   }
 
-
-
-  /* .container-fluid { */
-    /* background-color:white; */
-    /* border-radius: 5px; */
-    /* padding: 10px; */
-    /* box-shadow: 0 0 50px 8px; */
-/* } */
 
   
   .btn-grid {
