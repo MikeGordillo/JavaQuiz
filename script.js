@@ -1,27 +1,47 @@
-
-
+var seconds 
 function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
+  var timer = duration, seconds;
+  setInterval(function () {
+      // minutes = parseInt(timer / 60, 10);
+      seconds = parseInt(timer % 60, 10);
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+      // minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = minutes + ":" + seconds;
+      display.textContent =  seconds;
 
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
+      if (--timer < 0) {
+          timer = duration;
+      }
+  }, 1000);
 }
+// var timerDiv = document.getElementById('time');
 
-window.onload = function () {
-    var oneMinutes = 60 * 1,
-        display = document.querySelector('#time');
-    startTimer(oneMinutes, display);
-};
+// var timerX = 60;
+// var mainTimer = setInterval(function () {
+//   timerX--
+//        timerDiv.textContent = timerX;
+//       if (timerX=== 0){
+//         stopCount()
+//       }
+//       // if (--timer < 0) {
+//       //     timer = duration;
+//       // }
+//   // }, 1000);
+// }, 1000)
+// function stopCount(){
+//   clearInterval(mainTimer)
+// }
+
+
+// var timeLeft = 0;
+
+
+// window.onload = function () {
+    // var oneMinutes = 60 * 1,
+        // display = document.querySelector('#time');
+    // startTimer(oneMinutes, display);
+// };
 
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
@@ -90,7 +110,17 @@ nextButton.addEventListener('click', () => {
   setNextQuestion()
 })
 
+var display = document.querySelector('#time');
+
+var oneMinutes = 60 * 1;
+
 function startGame() {
+
+  var readySetGo=document.querySelector('.ml4')
+  readySetGo.classList.add('hide')
+  startTimer(oneMinutes, display);
+
+  
   startButton.classList.add('hide')
   shuffledQuestions = questions.sort(() => Math.random() - .5)
   currentQuestionIndex = 0
@@ -125,13 +155,19 @@ function resetState() {
   }
 }
 
+// var currentQuestion = {}; 
+// currentQuestion = selectedButton.dataset
 function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
+  // if (!correct){
+    // if (correct === currentQuestion. ){
+
+  // }
   setStatusClass(document.body, correct)
-  Array.from(answerButtonsElement.children).forEach(button => {
-    setStatusClass(button, button.dataset.correct)
-  })
+  // Array.from(answerButtonsElement.children).forEach(button => {
+  //   //setStatusClass(button, button.dataset.correct)
+  // })
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
@@ -143,15 +179,28 @@ function selectAnswer(e) {
 function setStatusClass(element, correct) {
   clearStatusClass(element)
   if (correct) {
+    console.log(`RIGHT ANSWER`)
     element.classList.add('correct')
   } else {
+    console.log(`WRONG ANSWER`)
     element.classList.add('wrong')
+    // Deduct 5 seconds from timer
+     seconds = parseInt(seconds) - 5
+    // TODO Check if timer is less than 0 
+
+    // If not less than zero then format seconds
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    // Display seconds on the timer
+    //display.textContent =  seconds;
+
   }
 }
 
 function clearStatusClass(element) {
   element.classList.remove('correct')
   element.classList.remove('wrong')
+  
 }
 
 const questions = [
