@@ -17,7 +17,7 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right,#5a3040, #68fa63 );
+    background: linear-gradient(to right,#88103e, #07aa02 );
   }
   
   
@@ -30,7 +30,7 @@
     padding: 10px;
     box-shadow: 0 0 50px 8px;
   }
-
+ 
 
   .container-fluid { 
     height: 560px;
