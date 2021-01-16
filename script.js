@@ -23,14 +23,11 @@ window.onload = function () {
     startTimer(oneMinutes, display);
 };
 
-
-
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
-
 
 var ml4 = {};
 ml4.opacityIn = [0,1];
@@ -182,10 +179,13 @@ const questions = [
       ]
     },
     {
-      question: 'if, else and else if are examples of?',
+      question: 'if, else and else if, are examples of?',
       answers: [
         { text: 'functions', correct: false },
         { text: 'conditional statements', correct: true }
       ]
-    }
-  ]
+    },
+        
+]
+  
+

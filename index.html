@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
     <script defer src="script.js"></script>
-    <title>JavaQuizApp</title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <title>JavaQuizApp</title>
   </head>
  <body>
 
@@ -16,6 +17,11 @@
 <div class="timer">
   <div id="time" class="timer-sec">00:00</div>
 </div>
+
+<div class="display2">
+  <div id="score" class="score-display">0</div>
+</div>
+
   <div class="container-fluid">
       <a class="btn btn-outline-success-link active" href="second.html">High Scores</a>
   </div>
@@ -30,7 +36,7 @@
 
 
 
-  <div class="container">
+  <div class="container ">
     <div id="question-container" class="hide">
       <div id="question">Question</div>
       <div id="answer-buttons" class="btn-grid">
@@ -40,7 +46,7 @@
         <button class="btn">Answer 4</button>
       </div>
     </div>
-    <div class="controls">
+    <div class="controls ">
       <button id="start-btn" class="start-btn btn">Start</button>
       <button id="next-btn" class="next-btn btn hide">Next</button>
     </div>
