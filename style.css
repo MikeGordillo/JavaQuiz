@@ -25,11 +25,44 @@
       height:150px;
     width: 800px;
     max-width: 80%;
-    background-color: white;
+    background-color:lightblue;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 50px 8px;
   }
+
+
+  .container-fluid { 
+    height: 560px;
+    position: relative;;
+   
+  }
+
+  .ml4 {
+    position: relative;
+    font-weight: 900;
+    font-size: 4.5em;
+  }
+  .ml4 .letters {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0.3em;
+    right: 0;
+    opacity: 0; 
+  }
+
+  .ml4{
+      text-align: center;
+  }
+
+  /* .container-fluid { */
+    /* background-color:white; */
+    /* border-radius: 5px; */
+    /* padding: 10px; */
+    /* box-shadow: 0 0 50px 8px; */
+/* } */
+
   
   .btn-grid {
     display: grid;
