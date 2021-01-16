@@ -39,22 +39,22 @@
   }
 
   .ml4 {
-    position: relative;
+    color:white;
+    top: 0;
+    position: absolute;
     font-weight: 900;
     font-size: 4.5em;
   }
   .ml4 .letters {
-    position: absolute;
-    margin: auto;
+    position: absolute;;
+    margin:0;
     left: 0;
     top: 0.3em;
     right: 0;
     opacity: 0; 
   }
 
-  .ml4{
-      text-align: center;
-  }
+
 
   /* .container-fluid { */
     /* background-color:white; */
