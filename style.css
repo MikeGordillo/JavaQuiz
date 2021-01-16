@@ -38,17 +38,24 @@
     }
 
   .timer {
+      font-family:monospace ;
+      font-size: 19px;
+      font-weight: bold;
+      margin-right: 70px;
+      margin-top: 10px;
       padding: 18px;
       position: fixed;
+      align-items: center;
+      justify-content: space-between;
       top:  0;
       right: 0;
-      text-align: center;
-      height: 20px;
+      height: 10px;
       width: 60px;
       border-radius: 2px;
       background-color:black;
       color: white;
       }
+
 
   .ml4 {
     color:white;
