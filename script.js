@@ -1,6 +1,5 @@
 
 
-
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
@@ -160,35 +159,33 @@ function clearStatusClass(element) {
 
 const questions = [
     {
-      question: 'What is the capital of Iceland?',
+      question: 'JavaScript variables are containers for storing data values.',
       answers: [
-        { text: 'Reykjavík', correct: true },
-        { text: 'Belgium', correct: false }
+        { text: 'TRUE', correct: true },
+        { text: 'FALSE', correct: false }
       ]
     },
     {
-      question: 'What is the largest country in the world?',
+      question: 'A JavaScript function is executed when "something" invokes it (____ __).',
       answers: [
-        { text: 'Russia', correct: true },
-        { text: 'Africa', correct: false },
-        { text: 'India', correct: false },
-        { text: 'Australia', correct: false }
+        { text: 'calls it', correct: true },
+        { text: 'returns', correct: false },
+        { text: 'alerts', correct: false },
+        { text: 'functions', correct: false }
       ]
     },
     {
-      question: 'How many valves does the heart have?',
+      question: 'An array is a special variable, which can hold more than one value at a time.',
       answers: [
-        { text: 'Eight', correct: false },
-        { text: 'Four', correct: true },
-        { text: 'Two', correct: false },
-        { text: 'Five', correct: false }
+        { text: 'FALSE', correct: false },
+        { text: 'TRUE', correct: true },
       ]
     },
     {
-      question: 'What is the Papaver rhoeas flower better known as?',
+      question: 'if, else and else if are examples of?',
       answers: [
-        { text: 'A tulip!', correct: false },
-        { text: 'A poppy!', correct: true }
+        { text: 'functions', correct: false },
+        { text: 'conditional statements', correct: true }
       ]
     }
   ]
