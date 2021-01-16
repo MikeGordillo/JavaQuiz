@@ -1,4 +1,6 @@
 
+
+
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
@@ -82,6 +84,7 @@ anime.timeline({loop: true})
     duration: 500,
     delay: 500
   });
+
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -189,5 +192,3 @@ const questions = [
       ]
     }
   ]
-
- 
