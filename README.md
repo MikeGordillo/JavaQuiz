@@ -42,3 +42,4 @@ I completed seven of the required tasks.
 
 https://github.com/MikeGordillo/JavaQuiz
 https://mikegordillo.github.io/JavaScriptQuiz/
+![Alt text](https://github.com/MikeGordillo/JavaScriptQuiz/blob/main/2021-01-16%20(2).png)
