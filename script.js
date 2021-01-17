@@ -116,7 +116,7 @@ function startTimer() {
   currentTimer = oneMinute
   setInterval(function () {
       currentTimer--
-      currentTimerString = currentTimer < 10 ? "0" + currenTimer : currentTimer;
+      currentTimerString = currentTimer < 0 ? "0" + currenTimer : currentTimer;
       display.textContent =  currentTimerString;
       if (currentTimer < 0) {
           // TODO Reset Timer
@@ -211,7 +211,7 @@ function setStatusClass(element, correct) {
     console.log(`WRONG ANSWER`)
     element.classList.add('wrong')
     // Deduct 5 seconds from timer
-    currentTimer = currentTimer - 5
+    currentTimer = currentTimer - 12
   }
 }
 
