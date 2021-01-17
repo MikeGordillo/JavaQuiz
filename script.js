@@ -1,61 +1,38 @@
-var seconds 
-function startTimer(duration, display) {
-  var timer = duration, seconds;
-  setInterval(function () {
-      // minutes = parseInt(timer / 60, 10);
-      seconds = parseInt(timer % 60, 10);
-
-      // minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-
-      display.textContent =  seconds;
-
-      if (--timer < 0) {
-          timer = duration;
-      }
-  }, 1000);
-}
-// var timerDiv = document.getElementById('time');
-
-// var timerX = 60;
-// var mainTimer = setInterval(function () {
-//   timerX--
-//        timerDiv.textContent = timerX;
-//       if (timerX=== 0){
-//         stopCount()
-//       }
-//       // if (--timer < 0) {
-//       //     timer = duration;
-//       // }
-//   // }, 1000);
-// }, 1000)
-// function stopCount(){
-//   clearInterval(mainTimer)
-// }
-
-
-// var timeLeft = 0;
-
-
-// window.onload = function () {
-    // var oneMinutes = 60 * 1,
-        // display = document.querySelector('#time');
-    // startTimer(oneMinutes, display);
-// };
-
+// HTML Elements
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
-var ml4 = {};
-ml4.opacityIn = [0,1];
-ml4.scaleIn = [0.2, 1];
-ml4.scaleOut = 3;
-ml4.durationIn = 800;
-ml4.durationOut = 600;
-ml4.delay = 500;
+// Question related global variables
+var shuffledQuestions, currentQuestionIndex
+
+// Handle on the timer element
+var display = document.querySelector('#time')
+
+// Score element
+var score = document.querySelector('#score')
+var points = 0
+
+// Timer related variables
+var seconds 
+var oneMinute = 60 * 1
+var currentTimer
+var currentTimerString
+
+// Animation related variables
+var ml4 = {}
+ml4.opacityIn = [0,1]
+ml4.scaleIn = [0.2, 1]
+ml4.scaleOut = 3
+ml4.durationIn = 800
+ml4.durationOut = 600
+ml4.delay = 500
+
+// Create a global variable called points
+// Increase points value when they get a correct answer
+// Update the HTML element with this new value
 
 anime.timeline({loop: true})
   .add({
@@ -101,24 +78,67 @@ anime.timeline({loop: true})
     delay: 500
   });
 
+const questions = [
+  {
+    question: 'JavaScript variables are containers for storing data values.',
+    answers: [
+      { text: 'TRUE', correct: true },
+      { text: 'FALSE', correct: false }
+    ]
+  },
+  {
+    question: 'A JavaScript function is executed when "something" invokes it (____ __).',
+    answers: [
+      { text: 'calls it', correct: true },
+      { text: 'returns', correct: false },
+      { text: 'alerts', correct: false },
+      { text: 'functions', correct: false }
+    ]
+  },
+  {
+    question: 'An array is a special variable, which can hold more than one value at a time.',
+    answers: [
+      { text: 'FALSE', correct: false },
+      { text: 'TRUE', correct: true },
+    ]
+  },
+  {
+    question: 'if, else and else if, are examples of?',
+    answers: [
+      { text: 'functions', correct: false },
+      { text: 'conditional statements', correct: true }
+    ]
+  },
+      
+]
 
-let shuffledQuestions, currentQuestionIndex
+function startTimer() {
+  currentTimer = oneMinute
+  setInterval(function () {
+      currentTimer--
+      currentTimerString = currentTimer < 10 ? "0" + currenTimer : currentTimer;
+      display.textContent =  currentTimerString;
+      if (currentTimer < 0) {
+          // TODO Reset Timer
+          console.log(`TIME IS UP`)
+      }
+  }, 1000);
+}
 
+
+// Add event listeners
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
   currentQuestionIndex++
   setNextQuestion()
 })
 
-var display = document.querySelector('#time');
-
-var oneMinutes = 60 * 1;
-
+// Start the game
 function startGame() {
-
-  var readySetGo=document.querySelector('.ml4')
+  console.log(`Inside Start Game`)
+  var readySetGo = document.querySelector('.ml4')
   readySetGo.classList.add('hide')
-  startTimer(oneMinutes, display);
+  startTimer();
 
   
   startButton.classList.add('hide')
@@ -128,11 +148,13 @@ function startGame() {
   setNextQuestion()
 }
 
+// Handle logic for next question
 function setNextQuestion() {
   resetState()
   showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
+// Show question text and options
 function showQuestion(question) {
   questionElement.innerText = question.question
   question.answers.forEach(answer => {
@@ -147,6 +169,7 @@ function showQuestion(question) {
   })
 }
 
+// Resets the quiz
 function resetState() {
   clearStatusClass(document.body)
   nextButton.classList.add('hide')
@@ -155,8 +178,7 @@ function resetState() {
   }
 }
 
-// var currentQuestion = {}; 
-// currentQuestion = selectedButton.dataset
+// Handle answer action
 function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
@@ -176,65 +198,27 @@ function selectAnswer(e) {
   }
 }
 
+// check if answer is correct
 function setStatusClass(element, correct) {
   clearStatusClass(element)
   if (correct) {
     console.log(`RIGHT ANSWER`)
     element.classList.add('correct')
+    // Increase points value here
+    // Don't forget to update the HTML element with this new value
+    score.textContent = ++points;
   } else {
     console.log(`WRONG ANSWER`)
     element.classList.add('wrong')
     // Deduct 5 seconds from timer
-     seconds = parseInt(seconds) - 5
-    // TODO Check if timer is less than 0 
-
-    // If not less than zero then format seconds
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-
-    // Display seconds on the timer
-    //display.textContent =  seconds;
-
+    currentTimer = currentTimer - 5
   }
 }
 
+// Clear correct and wrong styling
 function clearStatusClass(element) {
   element.classList.remove('correct')
   element.classList.remove('wrong')
   
 }
-
-const questions = [
-    {
-      question: 'JavaScript variables are containers for storing data values.',
-      answers: [
-        { text: 'TRUE', correct: true },
-        { text: 'FALSE', correct: false }
-      ]
-    },
-    {
-      question: 'A JavaScript function is executed when "something" invokes it (____ __).',
-      answers: [
-        { text: 'calls it', correct: true },
-        { text: 'returns', correct: false },
-        { text: 'alerts', correct: false },
-        { text: 'functions', correct: false }
-      ]
-    },
-    {
-      question: 'An array is a special variable, which can hold more than one value at a time.',
-      answers: [
-        { text: 'FALSE', correct: false },
-        { text: 'TRUE', correct: true },
-      ]
-    },
-    {
-      question: 'if, else and else if, are examples of?',
-      answers: [
-        { text: 'functions', correct: false },
-        { text: 'conditional statements', correct: true }
-      ]
-    },
-        
-]
-  
 
