@@ -109,8 +109,8 @@ const questions = [
       { text: 'conditional statements', correct: true }
     ]
   },
-      
-]
+ ]
+
 
 function startTimer() {
   currentTimer = oneMinute
@@ -221,3 +221,5 @@ function clearStatusClass(element) {
   element.classList.remove('wrong')
   
 }
+
+
