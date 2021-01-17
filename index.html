@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
     <title>JavaScriptQuizApp</title>
-  </head>
+</head>
  <body>
 
 <div class="header">
@@ -34,7 +34,7 @@
 
 
 
-  <div class="container ">
+  <div class="container">
     <div id="question-container" class="hide">
       <div id="question">Question</div>
       <div id="answer-buttons" class="btn-grid">
@@ -46,13 +46,23 @@
     </div>
     <div class="controls ">
       <button id="start-btn" class="start-btn btn">Start</button>
-      <button id="next-btn" class="next-btn btn hide">Next</button>
+      <button type="reset" value="reset" id="next-btn" class="next-btn btn hide" onclick="myFunction()">Next</button>
     </div>
   </div>
 
+  <!-- <p id="demo"></p> -->
 
   <!-- <iframe frameborder="0" scrolling="no" src="https://freesound.org/embed/sound/iframe/145461/simple/small/" width="375" height="30"></iframe>     -->
-        
+ <!-- <script>
+   function myFunction() {
+  var person = prompt("Please enter your name", "Harry Potter");
+  if (person != null) {
+    document.getElementById("demo").innerHTML =
+    "Hello " + person + "! How are you today?";
+  }
+}
+
+ </script> -->
         
         
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>

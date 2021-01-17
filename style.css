@@ -24,10 +24,12 @@
   }
   
   
+  
   .container {
     height:150px;
     width: 800px;
     max-width: 80%;
+    /* width: 100%; */
     background-color:lightblue;
     border-radius: 5px;
     padding: 10px;
@@ -40,7 +42,7 @@
     align-items: center;
     justify-content: space-between;
     height:150px;
-    width: 800px;
+    /* width: 100%; */
     max-width: 80%;
     background-color:lightblue;
     border-radius: 5px;
@@ -51,6 +53,7 @@
   .container-fluid { 
     height: 560px;
     position: relative;
+    /* width: 100%; */
     }
 
   .timer {
@@ -80,6 +83,7 @@
     position: absolute;
     font-weight: 900;
     font-size: 4.5em;
+    /* width: 100%; */
   }
   .ml4 .letters {
     position: absolute;;
@@ -97,6 +101,7 @@
     grid-template-columns: repeat(2, auto);
     gap: 10px;
     margin: 20px 0;
+    /* width: 100%; */
   }
 
   
@@ -106,6 +111,7 @@
     background-color: hsl(var(--hue), 100%, 50%);
     border-radius: 5px;
     padding: 3px 10px;
+    /* width: 100%; */
     color: white;
     outline: none;
   }
@@ -130,6 +136,7 @@
   }
   
   .controls {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

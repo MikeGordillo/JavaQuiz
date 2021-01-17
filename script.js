@@ -221,4 +221,3 @@ function clearStatusClass(element) {
   element.classList.remove('wrong')
   
 }
-
