@@ -28,3 +28,4 @@ The Quiz is timed and Stores the high scores in local storage.
 This time around I met all the criteria.
 This was a really challenging task for me.
 
+![Alt text]("APP")
