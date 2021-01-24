@@ -20,6 +20,8 @@ h1 {
 }
 
 h2 {
+    text-align: center;
+    font-family: monospace;
     margin-left: 20px;
     font-size: 30px;
     color: rgb(5, 5, 112);
@@ -27,6 +29,8 @@ h2 {
 }
 
 #questions {
+    color: rgb(5, 5, 112);
+    font-family: monospace;
     text-align: center;
     font-size: 30px;
 }
@@ -45,6 +49,7 @@ h2 {
 
 
 button{
+    font-family: monospace;
     display: inline-block;
     border-radius: 10px;
     text-align: center;
@@ -70,6 +75,7 @@ button{
     align-items: center;
 }
 #timer{
+    font-family: monospace;
     color:lightblue;
     font-size: x-large;
     text-align: center;
